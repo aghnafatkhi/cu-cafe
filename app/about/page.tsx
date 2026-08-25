@@ -66,8 +66,8 @@ export default function AboutPage() {
 
                 <div className="space-y-2.5 pt-1">
                   <motion.div
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
+                    whileHover={{ y: -1 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                     className="p-3.5 bg-white border border-[#E5E0D8] transition-shadow hover:shadow-xs"
                   >
                     <h3 className="font-sans font-bold text-sm text-black">
@@ -79,8 +79,8 @@ export default function AboutPage() {
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
+                    whileHover={{ y: -1 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                     className="p-3.5 bg-white border border-[#E5E0D8] transition-shadow hover:shadow-xs"
                   >
                     <h3 className="font-sans font-bold text-sm text-black">
@@ -100,7 +100,7 @@ export default function AboutPage() {
                     src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=80"
                     alt="CU@CAFE Culinary Craftsmanship"
                     fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -131,11 +131,11 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -3 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.35, delay: 0.03, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -1 }}
                 className="p-4.5 bg-[#292A28] border border-[#383834] space-y-1.5 transition-colors hover:border-neutral-500"
               >
                 <h3 className="font-sans font-bold text-base text-white">
@@ -147,11 +147,11 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -3 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.35, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -1 }}
                 className="p-4.5 bg-[#292A28] border border-[#383834] space-y-1.5 transition-colors hover:border-neutral-500"
               >
                 <h3 className="font-sans font-bold text-base text-white">
@@ -163,11 +163,11 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -3 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.35, delay: 0.09, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -1 }}
                 className="p-4.5 bg-[#292A28] border border-[#383834] space-y-1.5 transition-colors hover:border-neutral-500"
               >
                 <h3 className="font-sans font-bold text-base text-white">
@@ -197,14 +197,19 @@ export default function AboutPage() {
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 onClick={() => setIsResModalOpen(true)}
                 className="bg-black text-white px-6 py-2.5 text-xs uppercase font-semibold tracking-wider hover:bg-neutral-800 transition-colors cursor-pointer"
               >
                 Reservasi Meja
               </motion.button>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
+              >
                 <Link
                   href="/menu"
                   className="border border-neutral-400 text-black px-6 py-2.5 text-xs uppercase font-medium tracking-wider hover:border-black transition-colors inline-block"

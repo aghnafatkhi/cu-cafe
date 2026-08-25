@@ -22,16 +22,16 @@ export default function SectionTransition({
   ...props
 }: SectionTransitionProps) {
   const transitionConfig = {
-    duration: 0.5,
+    duration: 0.45,
     delay,
-    ease: [0.25, 0.1, 0.25, 1] as const,
+    ease: [0.22, 1, 0.36, 1] as const,
   };
 
   if (animateOnMount) {
     return (
       <motion.section
         id={id}
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={transitionConfig}
         className={className}
@@ -45,9 +45,9 @@ export default function SectionTransition({
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-30px' }}
+      viewport={{ once: true, margin: '-20px' }}
       transition={transitionConfig}
       className={className}
       {...props}

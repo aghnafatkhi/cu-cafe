@@ -161,9 +161,6 @@ export default function Footer() {
                   <span>@{BUSINESS_INFO.instagramHandle}</span>
                 </a>
               </div>
-              <p className="text-neutral-400 text-[11px] pt-1">
-                ⭐ 4.9 / 5.0 (3.766+ Google Reviews)
-              </p>
             </div>
           </div>
         </div>

@@ -25,11 +25,6 @@ export const BUSINESS_INFO = {
     googleMapsUrl: 'https://maps.google.com/?q=CU@CAFE+Kota+Wisata+Amsterdam',
   },
   priceRange: 'Rp50.000 – Rp75.000 / orang (Regular) · ±Rp100.000+ (Steak & Signatures)',
-  rating: {
-    score: '4.9',
-    reviewCount: '3.766+',
-    label: 'Ulasan Publik Terverifikasi',
-  },
   operatingSchedule: [
     { dayName: 'Senin', shortDay: 'Sen', dayIndex: 1, openTime: '08:00', closeTime: '22:00', openHour: 8, closeHour: 22 },
     { dayName: 'Selasa', shortDay: 'Sel', dayIndex: 2, openTime: '08:00', closeTime: '22:00', openHour: 8, closeHour: 22 },
@@ -48,29 +43,6 @@ export const BUSINESS_INFO = {
     { title: 'Akses Kursi Roda & Parkir Luas', desc: 'Aksesibilitas ramah keluarga serta area parkir mobil dan motor' },
     { title: 'Booking Acara & Gathering', desc: 'Fasilitas reservasi ulang tahun, bridal shower, lamaran, dan reuni' },
     { title: 'Dine-In & Takeaway', desc: 'Layanan makan di tempat atau bungkus dengan kemasan higienis' },
-  ],
-  testimonials: [
-    {
-      author: 'Rina S.',
-      occasion: 'Family Dinner & Weekend Chill',
-      rating: 5,
-      quote:
-        'Pilihan menunya sangat variatif dari steak sampai ramen, dan American Smoked Chicken-nya benar-benar smokey meresap. Suasana Cluster Amsterdam bikin betah nongkrong lama.',
-    },
-    {
-      author: 'Dimas Aditya',
-      occasion: 'WFC & Afternoon Coffee',
-      rating: 5,
-      quote:
-        'Tempat yang pas dekat AEON Kota Wisata. Es Kopi Pasar Lama dan Next Level Coffee sangat recommended, WiFi kencang, dan pencahayaannya hangat bernuansa editorial.',
-    },
-    {
-      author: 'Nathalie W.',
-      occasion: 'Private Birthday Gathering',
-      rating: 5,
-      quote:
-        'Booking private room untuk acara ulang tahun keluarga lewat WhatsApp lancar sekali. Sound karaoke jernih dan porsi makanannya pas untuk sharing.',
-    },
   ],
 };
 

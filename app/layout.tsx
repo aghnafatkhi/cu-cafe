@@ -86,11 +86,6 @@ export default function RootLayout({
         closes: '23:00',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '3766',
-    },
   };
 
   return (

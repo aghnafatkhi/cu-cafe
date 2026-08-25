@@ -75,9 +75,9 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
               {/* Left: Headline & Actions */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 className="lg:col-span-7 space-y-5"
               >
                 <div className="inline-flex items-center gap-2 text-xs uppercase font-sans tracking-wider text-neutral-400">
@@ -99,7 +99,12 @@ export default function HomePage() {
 
                 {/* Primary Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1.5">
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+                  <motion.div
+                    whileHover={{ y: -1 }}
+                    whileTap={{ y: 0 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className="w-full sm:w-auto"
+                  >
                     <Link
                       id="hero-view-menu-btn"
                       href="/menu"
@@ -112,8 +117,9 @@ export default function HomePage() {
 
                   <motion.button
                     id="hero-book-table-btn"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ y: -1 }}
+                    whileTap={{ y: 0 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                     onClick={() => setIsResModalOpen(true)}
                     className="border border-neutral-500 text-white px-6 py-3 text-xs uppercase font-medium tracking-wider hover:border-white transition-colors flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
                   >
@@ -141,10 +147,10 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                    <Star className="w-4 h-4 text-amber-400 fill-amber-400 shrink-0" />
+                    <Phone className="w-4 h-4 text-neutral-400 shrink-0" />
                     <div>
-                      <p className="text-white font-medium">Rating 4.9 / 5.0</p>
-                      <p className="text-neutral-400 text-[11px]">3.700+ Ulasan</p>
+                      <p className="text-white font-medium">WhatsApp</p>
+                      <p className="text-neutral-400 text-[11px]">{BUSINESS_INFO.phone}</p>
                     </div>
                   </div>
                 </div>
@@ -152,9 +158,9 @@ export default function HomePage() {
 
               {/* Right: Clean Hero Image */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
+                initial={{ opacity: 0, scale: 1.02 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="lg:col-span-5"
               >
                 <div className="relative aspect-4/3 sm:aspect-16/11 bg-neutral-900 border border-[#383834] overflow-hidden">
@@ -217,11 +223,11 @@ export default function HomePage() {
               ].map((pillar, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.4, delay: idx * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.4, delay: idx * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -1 }}
                   className="bg-white p-4.5 border border-[#E5E0D8] space-y-1.5 transition-shadow hover:shadow-xs"
                 >
                   <span className="text-[11px] font-bold uppercase font-sans text-neutral-400 block">
@@ -271,10 +277,10 @@ export default function HomePage() {
               {homeFeatured.map((item, idx) => (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.4, delay: idx * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{ duration: 0.4, delay: idx * 0.04, ease: [0.22, 1, 0.36, 1] }}
                   className="flex flex-col"
                 >
                   {item.image && (
@@ -283,7 +289,7 @@ export default function HomePage() {
                         src={item.image}
                         alt={item.name}
                         fill
-                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        className="object-cover transition-transform duration-300 hover:scale-[1.02]"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -310,8 +316,9 @@ export default function HomePage() {
               </div>
               <motion.a
                 id="featured-wa-chat-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 href={getWhatsAppLink({ type: 'general' })}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -343,12 +350,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {/* Private Room Karaoke */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -2 }}
-                className="p-5 bg-[#11110F] text-white space-y-3 transition-transform"
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -1 }}
+                className="p-5 bg-[#11110F] text-white space-y-3 transition-colors"
               >
                 <div className="flex items-center gap-2 text-xs text-neutral-400 uppercase font-sans">
                   <Mic className="w-4 h-4 text-white" />
@@ -374,12 +381,12 @@ export default function HomePage() {
 
               {/* Live Music Sessions */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -2 }}
-                className="p-5 bg-white border border-[#E5E0D8] space-y-3 transition-transform"
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.4, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -1 }}
+                className="p-5 bg-white border border-[#E5E0D8] space-y-3 transition-colors"
               >
                 <div className="flex items-center gap-2 text-xs text-neutral-600 uppercase font-sans">
                   <Music className="w-4 h-4 text-black" />
@@ -409,65 +416,7 @@ export default function HomePage() {
         </SectionTransition>
 
         {/* ========================================================================= */}
-        {/* 5. TESTIMONIALS (Clean & high trust)                                     */}
-        {/* ========================================================================= */}
-        <SectionTransition
-          id="social-proof-section"
-          className="py-10 lg:py-12 bg-[#F7F5F0] text-[#11110F] border-b border-[#E5E0D8]"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.97 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="lg:col-span-4 p-5 bg-white border border-[#E5E0D8] space-y-1.5"
-              >
-                <span className="text-xs uppercase font-sans font-bold text-neutral-500 block">
-                  Ulasan Tamu
-                </span>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-sans text-3xl font-bold text-black">4.9</span>
-                  <span className="text-neutral-400 text-xs">/ 5.0</span>
-                </div>
-                <div className="flex text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                  ))}
-                </div>
-                <p className="text-xs text-neutral-600 font-sans pt-0.5">
-                  Berdasarkan <strong>3.700+ ulasan</strong> Google Maps.
-                </p>
-              </motion.div>
-
-              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-3.5">
-                {BUSINESS_INFO.testimonials.map((t, idx) => (
-                  <motion.div
-                    key={idx}
-                    id={`testimonial-quote-${idx}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: idx * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="p-4 bg-white border border-[#E5E0D8] space-y-2"
-                  >
-                    <p className="text-xs text-neutral-700 font-sans italic leading-relaxed">
-                      “{t.quote}”
-                    </p>
-                    <div className="border-t border-neutral-100 pt-1.5 text-[11px]">
-                      <p className="font-bold text-black">{t.author}</p>
-                      <p className="text-neutral-500">{t.occasion}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </SectionTransition>
-
-        {/* ========================================================================= */}
-        {/* 6. BOTTOM RESERVATION CTA                                                 */}
+        {/* 5. BOTTOM RESERVATION CTA                                                 */}
         {/* ========================================================================= */}
         <SectionTransition
           id="reservation-cta-section"
@@ -484,8 +433,9 @@ export default function HomePage() {
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <motion.button
                 id="cta-open-res-modal-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 onClick={() => setIsResModalOpen(true)}
                 className="w-full sm:w-auto bg-white text-black px-6 py-2.5 text-xs uppercase font-semibold tracking-wider hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
@@ -494,8 +444,9 @@ export default function HomePage() {
               </motion.button>
               <motion.a
                 id="cta-direct-wa-call-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 href={getWhatsAppLink({ type: 'general' })}
                 target="_blank"
                 rel="noopener noreferrer"

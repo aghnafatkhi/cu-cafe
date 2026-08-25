@@ -23,8 +23,8 @@ export default function DishCard({
   return (
     <motion.article
       id={`dish-card-${item.id}`}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+      whileHover={{ y: -1 }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       className={`p-4 sm:p-5 transition-colors duration-150 border flex flex-col justify-between ${
         darkSurface
           ? 'bg-[#292A28] border-[#383834] text-[#F7F5F0]'
@@ -131,7 +131,9 @@ export default function DishCard({
             <motion.button
               id={`dish-add-btn-${item.id}`}
               type="button"
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 0 }}
+              transition={{ duration: 0.15, ease: 'easeOut' }}
               onClick={() => onToggleWishlist(item)}
               className={`text-xs sm:text-[11px] font-semibold px-2.5 sm:px-2.5 py-1.5 sm:py-1 transition-colors flex items-center gap-1 cursor-pointer select-none ${
                 isInWishlist
@@ -160,7 +162,9 @@ export default function DishCard({
             <motion.button
               id={`dish-order-btn-${item.id}`}
               type="button"
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 0 }}
+              transition={{ duration: 0.15, ease: 'easeOut' }}
               onClick={() => onQuickOrder(item)}
               className={`text-xs sm:text-[11px] font-semibold px-3 py-1.5 sm:py-1 transition-colors cursor-pointer select-none ${
                 darkSurface

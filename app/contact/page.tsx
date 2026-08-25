@@ -93,7 +93,7 @@ export default function ContactPage() {
                     >
                       <span
                         className={`w-1.5 h-1.5 rounded-full ${
-                          status.isOpen ? 'bg-emerald-600 animate-pulse' : 'bg-neutral-500'
+                          status.isOpen ? 'bg-emerald-600' : 'bg-neutral-500'
                         }`}
                       />
                       <span>{status.isOpen ? 'Buka' : 'Tutup'}</span>
@@ -151,8 +151,9 @@ export default function ContactPage() {
                   </div>
                   <div className="pt-2">
                     <motion.a
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ y: -1 }}
+                      whileTap={{ y: 0 }}
+                      transition={{ duration: 0.15, ease: 'easeOut' }}
                       id="contact-open-gmaps-btn"
                       href={BUSINESS_INFO.address.googleMapsUrl}
                       target="_blank"
@@ -225,8 +226,9 @@ export default function ContactPage() {
                     </div>
 
                     <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ y: -1 }}
+                      whileTap={{ y: 0 }}
+                      transition={{ duration: 0.15, ease: 'easeOut' }}
                       type="submit"
                       className="w-full bg-white text-black py-3 sm:py-2.5 px-4 font-semibold uppercase tracking-wider hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 text-xs cursor-pointer min-h-[44px]"
                     >
@@ -317,7 +319,7 @@ export default function ContactPage() {
                   className="absolute inset-0 w-full h-full bg-black/10 hover:bg-black/20 backdrop-blur-[1px] transition-all flex flex-col items-center justify-center cursor-pointer p-4 text-center group focus:outline-none"
                   aria-label="Aktifkan peta Google Maps"
                 >
-                  <div className="bg-white/95 text-neutral-900 shadow-md border border-neutral-300 px-4 py-2.5 flex items-center gap-2 transition-transform group-hover:scale-105">
+                  <div className="bg-white/95 text-neutral-900 shadow-md border border-neutral-300 px-4 py-2.5 flex items-center gap-2 transition-transform group-hover:-translate-y-0.5">
                     <ZoomIn className="w-4 h-4 text-black" />
                     <span className="text-xs font-semibold uppercase tracking-wider">
                       Aktifkan Peta

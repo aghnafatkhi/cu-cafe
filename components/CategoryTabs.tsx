@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MENU_CATEGORIES } from '@/data/menu';
 
 interface CategoryTabsProps {
@@ -13,6 +13,21 @@ export default function CategoryTabs({
   onSelectCategory,
 }: CategoryTabsProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!scrollContainerRef.current) return;
+    const activeBtn = scrollContainerRef.current.querySelector(
+      `#category-tab-${selectedCategory}`
+    ) as HTMLElement | null;
+
+    if (activeBtn) {
+      activeBtn.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
+    }
+  }, [selectedCategory]);
 
   const handleTabClick = (id: string) => {
     onSelectCategory(id);
@@ -39,14 +54,14 @@ export default function CategoryTabs({
     >
       <div
         ref={scrollContainerRef}
-        className="flex items-center gap-5 sm:gap-6 overflow-x-auto whitespace-nowrap touch-pan-x overscroll-x-contain hide-scrollbar h-full scroll-smooth"
+        className="flex items-center gap-5 sm:gap-6 overflow-x-auto whitespace-nowrap touch-pan-x overscroll-x-contain hide-scrollbar h-full scroll-smooth snap-x snap-mandatory"
       >
         {/* 'Semua Menu' text tab */}
         <button
           id="category-tab-all"
           type="button"
           onClick={() => handleTabClick('all')}
-          className={`shrink-0 h-full flex items-center text-[13px] sm:text-sm transition-colors border-b-2 cursor-pointer select-none pb-0.5 ${
+          className={`shrink-0 h-full flex items-center text-[13px] sm:text-sm transition-all duration-200 ease-out border-b-2 cursor-pointer select-none pb-0.5 snap-center px-1 pl-1.5 ${
             selectedCategory === 'all'
               ? 'text-neutral-900 font-semibold border-neutral-900'
               : 'text-neutral-500 font-normal border-transparent hover:text-neutral-900'
@@ -56,15 +71,18 @@ export default function CategoryTabs({
         </button>
 
         {/* Individual category text tabs */}
-        {MENU_CATEGORIES.map((cat) => {
+        {MENU_CATEGORIES.map((cat, index) => {
           const isActive = selectedCategory === cat.id;
+          const isLast = index === MENU_CATEGORIES.length - 1;
           return (
             <button
               key={cat.id}
               id={`category-tab-${cat.id}`}
               type="button"
               onClick={() => handleTabClick(cat.id)}
-              className={`shrink-0 h-full flex items-center text-[13px] sm:text-sm transition-colors border-b-2 cursor-pointer select-none pb-0.5 ${
+              className={`shrink-0 h-full flex items-center text-[13px] sm:text-sm transition-all duration-200 ease-out border-b-2 cursor-pointer select-none pb-0.5 snap-center px-1 ${
+                isLast ? 'pr-1.5' : ''
+              } ${
                 isActive
                   ? 'text-neutral-900 font-semibold border-neutral-900'
                   : 'text-neutral-500 font-normal border-transparent hover:text-neutral-900'

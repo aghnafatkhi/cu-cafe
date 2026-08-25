@@ -79,7 +79,7 @@ export default function Navbar({ onOpenReservation }: NavbarProps) {
           <div className="flex items-center gap-2">
             <span
               className={`inline-block w-2 h-2 rounded-full ${
-                status.isOpen ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'
+                status.isOpen ? 'bg-emerald-400' : 'bg-neutral-500'
               }`}
             />
             <span className="font-medium text-neutral-200">{status.statusText}</span>
@@ -237,24 +237,16 @@ export default function Navbar({ onOpenReservation }: NavbarProps) {
                 id="mobile-menu-toggle-btn"
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`p-2 focus:outline-none relative transition-transform active:scale-90 ${
+                className={`p-2 focus:outline-none relative transition-colors ${
                   isScrolled || isHome ? 'text-white' : 'text-black'
                 }`}
                 aria-label={mobileMenuOpen ? 'Tutup Menu Navigasi' : 'Buka Menu Navigasi'}
               >
-                <motion.div
-                  key={mobileMenuOpen ? 'close' : 'open'}
-                  initial={{ rotate: mobileMenuOpen ? -90 : 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {mobileMenuOpen ? (
-                    <X className="w-6 h-6" />
-                  ) : (
-                    <MenuIcon className="w-6 h-6" />
-                  )}
-                </motion.div>
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <MenuIcon className="w-6 h-6" />
+                )}
               </button>
             </div>
           </div>
@@ -269,16 +261,11 @@ export default function Navbar({ onOpenReservation }: NavbarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.22, ease: 'easeInOut' }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
             className="fixed inset-0 z-50 bg-[#1D1D1B] text-[#F7F5F0] flex flex-col justify-between p-6 overflow-y-auto"
           >
             {/* Top brand header inside mobile menu */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05, duration: 0.2 }}
-              className="flex items-center justify-between border-b border-[#383834] pb-4"
-            >
+            <div className="flex items-center justify-between border-b border-[#383834] pb-4">
               <div>
                 <span className="font-sans text-xl font-bold uppercase tracking-tight text-white">
                   CU@CAFE
@@ -287,82 +274,64 @@ export default function Navbar({ onOpenReservation }: NavbarProps) {
                   Kota Wisata · By Chicken Union
                 </p>
               </div>
-              <motion.button
+              <button
                 id="close-mobile-menu-btn"
-                whileTap={{ scale: 0.9 }}
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 border border-neutral-700 text-neutral-200 hover:text-white transition-colors cursor-pointer"
                 aria-label="Tutup Menu"
               >
                 <X className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
-            {/* Navigation links with staggered slide-in */}
+            {/* Navigation links */}
             <div className="py-6 space-y-3">
               <nav className="flex flex-col space-y-1">
-                {navLinks.map((link, idx) => {
+                {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: -16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        delay: 0.08 + idx * 0.045,
-                        duration: 0.25,
-                        ease: [0.22, 1, 0.36, 1],
-                      }}
-                    >
+                    <div key={link.href}>
                       <Link
                         id={`mobile-nav-${link.href.replace('/', '') || 'home'}`}
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`group flex items-center justify-between text-base py-3 border-b border-[#292A28] transition-all duration-150 active:translate-x-1 ${
+                        className={`group flex items-center justify-between text-base py-3 border-b border-[#292A28] transition-colors duration-150 ${
                           isActive
                             ? 'text-white font-bold pl-2 border-white/40'
                             : 'text-neutral-300 hover:text-white'
                         }`}
                       >
-                        <span className="group-hover:translate-x-1.5 transition-transform duration-150">
-                          {link.label}
-                        </span>
+                        <span>{link.label}</span>
                         <ChevronRight
-                          className={`w-4 h-4 transition-transform duration-150 group-hover:translate-x-1 ${
+                          className={`w-4 h-4 ${
                             isActive ? 'text-white' : 'text-neutral-500'
                           }`}
                         />
                       </Link>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </nav>
             </div>
 
-            {/* Bottom info and quick actions with delayed slide-up */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.25, ease: 'easeOut' }}
-              className="border-t border-[#383834] pt-4 space-y-3"
-            >
+            {/* Bottom info and quick actions */}
+            <div className="border-t border-[#383834] pt-4 space-y-3">
               <div className="text-xs text-neutral-400">
                 <p className="text-neutral-300 font-medium">Cluster Amsterdam No. 30, Kota Wisata</p>
                 <p>WhatsApp: {BUSINESS_INFO.phone}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <motion.a
+                <a
                   id="mobile-drawer-wa-btn"
-                  whileTap={{ scale: 0.97 }}
                   href={getWhatsAppLink({ type: 'reservation' })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-black py-2.5 text-center text-xs uppercase tracking-wider font-semibold block transition-colors hover:bg-neutral-200"
                 >
                   Chat WhatsApp
-                </motion.a>
-                <motion.div whileTap={{ scale: 0.97 }}>
+                </a>
+                <div>
                   <Link
                     id="mobile-drawer-menu-btn"
                     href="/menu"
@@ -371,9 +340,9 @@ export default function Navbar({ onOpenReservation }: NavbarProps) {
                   >
                     Lihat Menu
                   </Link>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

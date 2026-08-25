@@ -36,17 +36,18 @@ export default function WhatsAppWishlistFloat({
     <>
       {/* Floating Pill Trigger */}
       <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 20, scale: 0.9 }}
-        transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 16 }}
+        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40"
       >
         <motion.button
           id="wishlist-floating-trigger"
           type="button"
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
+          whileHover={{ y: -1 }}
+          whileTap={{ y: 0 }}
+          transition={{ duration: 0.15, ease: 'easeOut' }}
           onClick={() => setIsOpen(!isOpen)}
           className="bg-[#11110F] text-white px-3.5 sm:px-4 py-3 shadow-2xl border border-neutral-700 flex items-center gap-2.5 sm:gap-3 hover:bg-neutral-800 transition-colors cursor-pointer"
         >

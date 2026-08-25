@@ -72,8 +72,9 @@ export default function EventsPage() {
 
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ y: 0 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
                   id="book-event-hero-btn"
                   onClick={() => setIsResModalOpen(true)}
                   className="bg-white text-black px-5 py-2.5 text-xs uppercase font-semibold tracking-wider hover:bg-neutral-200 transition-colors flex items-center gap-2 cursor-pointer"
@@ -82,8 +83,9 @@ export default function EventsPage() {
                   <span>Reservasi Acara</span>
                 </motion.button>
                 <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ y: 0 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
                   href={BUSINESS_INFO.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -112,7 +114,7 @@ export default function EventsPage() {
                   src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=1000&q=80"
                   alt="CU@CAFE Private Room and Ambiance"
                   fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover transition-transform duration-500 hover:scale-[1.02]"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -150,8 +152,9 @@ export default function EventsPage() {
 
                 <div className="pt-2">
                   <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ y: -1 }}
+                    whileTap={{ y: 0 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                     id="book-karaoke-btn"
                     onClick={() => setIsResModalOpen(true)}
                     className="bg-black text-white px-5 py-2.5 text-xs uppercase font-semibold tracking-wider hover:bg-neutral-800 transition-colors cursor-pointer"
@@ -186,11 +189,11 @@ export default function EventsPage() {
                 <motion.div
                   key={event.title}
                   id={`event-type-card-${idx}`}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: idx * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-                  whileHover={{ y: -2 }}
+                  viewport={{ once: true, margin: '-20px' }}
+                  transition={{ duration: 0.35, delay: idx * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -1 }}
                   className="p-4 sm:p-5 bg-[#292A28] border border-[#383834] flex flex-col justify-between space-y-2.5 transition-colors hover:border-neutral-500"
                 >
                   <div className="space-y-1.5">
@@ -242,8 +245,9 @@ export default function EventsPage() {
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 id="insta-follow-btn"
                 href={BUSINESS_INFO.instagramUrl}
                 target="_blank"
@@ -254,8 +258,9 @@ export default function EventsPage() {
                 <span>Instagram @cuatcafe</span>
               </motion.a>
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ y: 0 }}
+                transition={{ duration: 0.15, ease: 'easeOut' }}
                 onClick={() => setIsResModalOpen(true)}
                 className="border border-neutral-400 text-black px-5 py-2.5 text-xs uppercase font-medium tracking-wider hover:border-black transition-colors cursor-pointer"
               >
