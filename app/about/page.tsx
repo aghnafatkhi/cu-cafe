@@ -37,7 +37,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed max-w-2xl">
-                Destinasi casual dining di Kota Wisata dengan sajian American BBQ, masakan Barat, kuliner Jepang, hingga cita rasa Nusantara.
+                Destinasi casual dining di Kota Wisata dengan pilihan American BBQ, masakan Barat, kuliner Jepang, hingga menu Nusantara.
               </p>
             </div>
           </div>
@@ -58,10 +58,10 @@ export default function AboutPage() {
                   Filosofi
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight">
-                  Kelezatan Autentik & Bahan Segar
+                  Resep & Bahan Segar
                 </h2>
                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans">
-                  Setiap hidangan disiapkan dengan resep orisinal dan bahan segar untuk menemani momen santap bersama keluarga dan kerabat.
+                  Setiap menu dibuat dengan resep original dan bahan pilihan, cocok untuk kumpul keluarga maupun teman.
                 </p>
 
                 <div className="space-y-2.5 pt-1">
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   Indoor & Outdoor
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed font-sans">
-                  Area ber-AC yang nyaman serta area terbuka untuk santap santai.
+                  Area ber-AC yang nyaman serta area outdoor untuk bersantai.
                 </p>
               </motion.div>
 
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   VIP Karaoke Room
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed font-sans">
-                  Ruang privat dengan sound system karaoke untuk acara rombongan.
+                  Private room dengan sound system karaoke untuk acara rombongan.
                 </p>
               </motion.div>
             </div>

@@ -186,8 +186,8 @@ export default function ReservationModal({
                       onChange={(e) => setArea(e.target.value)}
                       className="w-full bg-[#292A28] border border-neutral-700 px-3 py-2.5 sm:py-2 text-white focus:outline-none focus:border-neutral-400 text-sm sm:text-xs"
                     >
-                      <option value="Indoor (AC & Nyaman)">Indoor (AC & Nyaman)</option>
-                      <option value="Outdoor (Asri / Smoking)">Outdoor (Asri / Smoking)</option>
+                      <option value="Indoor (AC)">Indoor (AC)</option>
+                      <option value="Outdoor (Smoking)">Outdoor (Smoking)</option>
                       <option value="Bebas / Meja Terbaik">Bebas / Meja Terbaik</option>
                     </select>
                   </div>
@@ -237,7 +237,7 @@ export default function ReservationModal({
                   <span>Kirim via WhatsApp</span>
                 </button>
                 <p className="text-[11px] text-neutral-400 text-center mt-2">
-                  Pesan terformat otomatis dikirim ke WhatsApp resmi (+628111113446).
+                  Pesan dikirim langsung ke WhatsApp resmi CU@CAFE.
                 </p>
               </div>
             </form>

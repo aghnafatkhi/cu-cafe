@@ -83,7 +83,7 @@ export default function HomePage() {
                 <div className="inline-flex items-center gap-2 text-xs uppercase font-sans tracking-wider text-neutral-400">
                   <span>Kota Wisata Cibubur</span>
                   <span>•</span>
-                  <span>Pilihan Menu</span>
+                  <span>Casual Dining</span>
                 </div>
 
                 <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
@@ -94,7 +94,7 @@ export default function HomePage() {
                 </h1>
 
                 <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed max-w-xl">
-                  Casual dining dengan aneka hidangan American BBQ smoked chicken, steak, ramen, hingga kuliner Nusantara.
+                  Casual dining dengan pilihan American BBQ smoked chicken, steak, ramen, hingga kuliner Nusantara.
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -188,7 +188,7 @@ export default function HomePage() {
                 Kategori Menu
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight">
-                Pilihan Rasa Favorit
+                Menu Favorit
               </h2>
             </div>
 
@@ -212,7 +212,7 @@ export default function HomePage() {
                 {
                   code: '04 · Nusantara',
                   title: 'Soto & Kopi',
-                  desc: 'Soto Betawi rempah dan es kopi artisan.',
+                  desc: 'Soto Betawi rempah dan es kopi pilihan.',
                 },
               ].map((pillar, idx) => (
                 <motion.div
@@ -305,7 +305,7 @@ export default function HomePage() {
                   Ingin info menu atau reservasi?
                 </p>
                 <p className="text-xs text-neutral-400 font-sans">
-                  Staf kami siap membantu via WhatsApp.
+                  Tim CU@CAFE siap membantu via WhatsApp.
                 </p>
               </div>
               <motion.a
@@ -336,7 +336,7 @@ export default function HomePage() {
                 Fasilitas
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight">
-                Ruang Privat & Hiburan
+                Private Room & Live Music
               </h2>
             </div>
 
@@ -355,10 +355,10 @@ export default function HomePage() {
                   <span>VIP Karaoke Room</span>
                 </div>
                 <h3 className="font-sans font-bold text-lg text-white">
-                  Ruang Privat (Kapasitas s.d. 20+ Orang)
+                  Private Room (Kapasitas s.d. 20+ Orang)
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed font-sans">
-                  Sound system karaoke jernih, AC privat, dan layanan menu langsung. Ideal untuk ulang tahun, gathering, dan arisan.
+                  Sound system karaoke jernih, AC, dan layanan menu langsung. Pas untuk ulang tahun, gathering, dan arisan.
                 </p>
                 <div className="pt-1">
                   <Link
@@ -366,7 +366,7 @@ export default function HomePage() {
                     href="/events"
                     className="text-xs uppercase font-semibold text-white underline hover:opacity-80 inline-flex items-center gap-1"
                   >
-                    <span>Info Ruang Acara</span>
+                    <span>Info Events & Private Room</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -389,7 +389,7 @@ export default function HomePage() {
                   Musik Akustik Akhir Pekan
                 </h3>
                 <p className="text-xs text-neutral-600 leading-relaxed font-sans">
-                  Suasana santai santap malam bersama musisi pilihan. Cek jadwal live music di Instagram @cuatcafe.
+                  Makan malam santai dengan iringan live acoustic. Cek jadwal lengkap di Instagram @cuatcafe.
                 </p>
                 <div className="pt-1">
                   <a
@@ -478,7 +478,7 @@ export default function HomePage() {
               Reservasi Meja
             </h2>
             <p className="text-xs sm:text-sm text-neutral-300 font-sans max-w-md mx-auto">
-              Buka setiap hari mulai 08.00 WIB. Hubungi kami untuk pesan meja atau ruang privat.
+              Buka setiap hari mulai 08.00 WIB. Hubungi kami untuk booking meja atau private room.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">

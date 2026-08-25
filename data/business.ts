@@ -40,14 +40,14 @@ export const BUSINESS_INFO = {
     { dayName: 'Minggu', shortDay: 'Min', dayIndex: 0, openTime: '08:00', closeTime: '22:00', openHour: 8, closeHour: 22 },
   ] as OperatingHoursDay[],
   facilities: [
-    { title: 'Indoor & Outdoor Seating', desc: 'Area ber-AC nyaman dan teras terbuka asri untuk santap santai' },
-    { title: 'Private Room & Karaoke', desc: 'Ruangan eksklusif berfasilitas audio karaoke untuk pertemuan dan acara privat' },
-    { title: 'Live Music Session', desc: 'Pertunjukan musik akustik berkala di malam hari (jadwal di Instagram)' },
-    { title: 'High-Speed WiFi & Power Outlets', desc: 'Koneksi stabil dan colokan memadai untuk kerja jarak jauh / WFC' },
+    { title: 'Indoor & Outdoor Seating', desc: 'Area ber-AC yang nyaman dan teras outdoor untuk kumpul santai' },
+    { title: 'Private Room & Karaoke', desc: 'Private room ber-AC dengan fasilitas karaoke untuk gathering dan acara khusus' },
+    { title: 'Live Music Session', desc: 'Musik akustik berkala saat makan malam (jadwal di Instagram)' },
+    { title: 'High-Speed WiFi & Power Outlets', desc: 'Koneksi internet stabil dan colokan listrik di area duduk untuk WFC' },
     { title: 'Musholla Nyaman', desc: 'Tempat ibadah bersih dan terawat di dalam area kafe' },
-    { title: 'Akses Kursi Roda & Parkir Luas', desc: 'Aksesibilitas ramah keluarga serta area parkir mobil dan motor memadai' },
-    { title: 'Akomodasi Acara & Gathering', desc: 'Layanan reservasi ulang tahun, bridal shower, lamaran, dan reuni komunitas' },
-    { title: 'Dine-In & Takeaway', desc: 'Layanan makan di tempat atau pesan bungkus kemasan higienis' },
+    { title: 'Akses Kursi Roda & Parkir Luas', desc: 'Aksesibilitas ramah keluarga serta area parkir mobil dan motor' },
+    { title: 'Booking Acara & Gathering', desc: 'Fasilitas reservasi ulang tahun, bridal shower, lamaran, dan reuni' },
+    { title: 'Dine-In & Takeaway', desc: 'Layanan makan di tempat atau bungkus dengan kemasan higienis' },
   ],
   testimonials: [
     {
@@ -144,12 +144,12 @@ export function getCurrentOpenStatus(): {
   let statusText = '';
   if (isOpen) {
     if (closingSoon) {
-      statusText = `Buka Sekarang · Tutup pkl ${currentSchedule.closeTime} (Segera Tutup)`;
+      statusText = `Buka · Tutup pkl ${currentSchedule.closeTime} WIB (segera tutup)`;
     } else {
-      statusText = `Buka Sekarang · Pukul ${currentSchedule.openTime} – ${currentSchedule.closeTime} WIB`;
+      statusText = `Buka · ${currentSchedule.openTime} – ${currentSchedule.closeTime} WIB`;
     }
   } else {
-    statusText = `Tutup Sekarang · Buka kembali pkl ${currentSchedule.openTime} WIB`;
+    statusText = `Tutup · Buka kembali pkl ${currentSchedule.openTime} WIB`;
   }
 
   return {

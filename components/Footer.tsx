@@ -119,7 +119,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link id="footer-link-events" href="/events" className="hover:text-white">
-                  Private Room & Karaoke
+                  Events & Private Room
                 </Link>
               </li>
               <li>

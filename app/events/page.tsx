@@ -23,22 +23,22 @@ export default function EventsPage() {
   const eventTypes = [
     {
       title: 'Ulang Tahun & Gathering',
-      desc: 'Momen kebersamaan keluarga dengan sajian menu sharing signature.',
+      desc: 'Makan bareng keluarga dengan pilihan menu sharing signature.',
       capacity: 'Hingga 30+ Orang',
     },
     {
       title: 'Private Karaoke Party',
-      desc: 'Ruang VIP privat ber-AC dengan layar TV dan sound system karaoke.',
+      desc: 'Private room ber-AC dengan layar TV dan sound system karaoke.',
       capacity: '8 – 20 Orang',
     },
     {
       title: 'Bridal Shower & Engagement',
-      desc: 'Penataan meja rapi untuk dokumentasi perayaan istimewa Anda.',
+      desc: 'Setup meja rapi untuk bridal shower, engagement, dan foto bersama.',
       capacity: '10 – 25 Orang',
     },
     {
       title: 'Arisan & Komunitas',
-      desc: 'Tempat kumpul komunitas dengan snack bites, pizza, dan artisan coffee.',
+      desc: 'Tempat kumpul komunitas dengan snack bites, pizza, dan kopi pilihan.',
       capacity: '15 – 40 Orang',
     },
   ];
@@ -59,15 +59,15 @@ export default function EventsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-2.5">
               <span className="text-xs uppercase font-sans font-semibold tracking-wider text-neutral-400">
-                Ruang Acara & Hiburan
+                Events & Private Room
               </span>
 
               <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-                Ruang Privat & Live Music
+                Private Room & Live Music
               </h1>
 
               <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed max-w-2xl">
-                Tersedia ruang VIP karaoke privat ber-AC untuk ulang tahun, gathering, serta santap malam berteman live acoustic.
+                Tersedia VIP karaoke room ber-AC untuk ulang tahun, gathering, serta makan malam berteman live acoustic.
               </p>
 
               <div className="pt-1 flex flex-wrap items-center gap-3">
@@ -126,7 +126,7 @@ export default function EventsPage() {
                   VIP Karaoke Room
                 </h2>
                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans">
-                  Ruang privat kedap suara untuk kenyamanan santap dan karaoke bersama rombongan.
+                  Private room kedap suara untuk kenyamanan acara dan karaoke bersama rombongan.
                 </p>
 
                 <div className="space-y-2 pt-1 text-xs font-sans">
@@ -136,7 +136,7 @@ export default function EventsPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-black shrink-0" />
-                    <span>Pendingin ruangan (AC) privat</span>
+                    <span>AC ruangan khusus</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-black shrink-0" />
@@ -174,10 +174,10 @@ export default function EventsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mb-6">
               <span className="text-xs uppercase font-sans font-semibold text-neutral-400 block mb-1">
-                Pilihan Acara
+                Untuk Berbagai Acara
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Jenis Kegiatan & Perayaan
+                Ulang Tahun, Arisan, & Gathering
               </h2>
             </div>
 
@@ -238,7 +238,7 @@ export default function EventsPage() {
               Live Acoustic Music
             </h2>
             <p className="text-xs sm:text-sm text-neutral-700 font-sans max-w-md mx-auto leading-relaxed">
-              Santap malam berteman lagu akustik. Jadwal berkala diumumkan di Instagram kami.
+              Nikmati makan malam dengan iringan live acoustic. Jadwal lengkap diumumkan di Instagram kami.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <motion.a

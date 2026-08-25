@@ -55,64 +55,59 @@ export default function MenuPage() {
 
       <main className="flex-1">
         {/* ========================================================================= */}
-        {/* 1. PAGE HEADER                                                            */}
+        {/* 1. PAGE HEADER (with non-sticky search field)                             */}
         {/* ========================================================================= */}
         <header
           id="menu-page-header"
           className="bg-[#1D1D1B] text-[#F7F5F0] py-6 sm:py-7 border-b border-[#383834]"
         >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-xl space-y-1">
-              <span className="text-xs uppercase font-sans font-semibold tracking-wider text-neutral-400">
-                CU@CAFE BSD
-              </span>
-              <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Daftar Menu
-              </h1>
-              <p className="text-xs text-neutral-300 font-sans">
-                Pilihan hidangan, kopi artisan, dan minuman segar untuk santap di tempat atau reservasi.
-              </p>
-            </div>
-          </div>
-        </header>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div className="max-w-xl space-y-1">
+                <span className="text-xs uppercase font-sans font-semibold tracking-wider text-neutral-400">
+                  CU@CAFE Kota Wisata
+                </span>
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  Daftar Menu
+                </h1>
+                <p className="text-xs text-neutral-300 font-sans">
+                  Pilihan hidangan, kopi, dan minuman segar untuk makan di tempat atau reservasi.
+                </p>
+              </div>
 
-        {/* ========================================================================= */}
-        {/* 2. STICKY CONTROLS: SEARCH & CATEGORY TABS                                */}
-        {/* ========================================================================= */}
-        <div
-          id="menu-sticky-controls"
-          className="sticky top-16 sm:top-18 z-30 bg-[#F7F5F0] border-b border-[#E5E0D8]"
-        >
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-2.5 pb-0">
-            {/* Search Input Bar (Simple single field) */}
-            <div className="flex items-center justify-between gap-4 pb-2">
-              <div className="relative flex-1 max-w-sm">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
+              {/* Simple non-sticky search field */}
+              <div className="relative w-full sm:w-64 shrink-0">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-400" />
                 <input
                   id="menu-search-input"
                   type="text"
                   placeholder="Cari menu..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-[#E5E0D8] pl-9 pr-8 py-1.5 text-sm sm:text-xs text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-neutral-900 font-sans transition-colors min-h-[38px] sm:min-h-0"
+                  className="w-full bg-[#292A28] border border-neutral-700 pl-8 pr-7 py-1.5 text-xs text-white placeholder:text-neutral-400 focus:outline-none focus:border-white font-sans transition-colors min-h-[38px] sm:min-h-0"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-neutral-400 hover:text-neutral-900 cursor-pointer p-1"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-neutral-400 hover:text-white cursor-pointer p-1"
                     aria-label="Hapus pencarian"
                   >
                     ×
                   </button>
                 )}
               </div>
-
-              <span className="text-xs text-neutral-500 font-sans shrink-0 hidden sm:inline tabular-nums">
-                {filteredItems.length} menu
-              </span>
             </div>
+          </div>
+        </header>
 
-            {/* Category Navigation (Horizontal Text Tabs) */}
+        {/* ========================================================================= */}
+        {/* 2. STICKY CATEGORY NAVIGATION (Compact single row)                        */}
+        {/* ========================================================================= */}
+        <div
+          id="menu-sticky-category-nav"
+          className="sticky top-16 sm:top-18 z-30 bg-[#F7F5F0] border-b border-[#E5E0D8]"
+        >
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <CategoryTabs
               selectedCategory={selectedCategory}
               onSelectCategory={setSelectedCategory}
@@ -125,9 +120,9 @@ export default function MenuPage() {
         {/* ========================================================================= */}
         <div
           id="menu-catalog-list"
-          className="py-6 sm:py-8"
+          className="py-5 sm:py-7"
         >
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-7">
             {filteredItems.length === 0 ? (
               <div className="text-center py-12 bg-white border border-[#E5E0D8] p-6 max-w-md mx-auto space-y-3">
                 <UtensilsCrossed className="w-8 h-8 text-neutral-400 mx-auto" />
@@ -157,19 +152,12 @@ export default function MenuPage() {
                       id={`menu-section-${category.id}`}
                       className="scroll-mt-32 sm:scroll-mt-36"
                     >
-                      {/* Category Header */}
-                      <div className="border-b border-[#D8D3C8] pb-1.5 mb-3.5 flex items-baseline justify-between gap-4">
-                        <div>
-                          <h2 className="font-serif text-[21px] sm:text-[24px] font-bold tracking-tight text-neutral-900 leading-tight">
-                            {category.name}
-                          </h2>
-                          {category.description && (
-                            <p className="text-[13px] text-neutral-600 font-sans mt-0.5">
-                              {category.description}
-                            </p>
-                          )}
-                        </div>
-                        <span className="text-xs font-sans text-neutral-500 shrink-0 tabular-nums">
+                      {/* Category Header: Clean, concise without marketing descriptions */}
+                      <div className="border-b border-[#D8D3C8] pb-1 mb-2 sm:mb-2.5 flex items-baseline justify-between gap-3">
+                        <h2 className="font-serif text-[19px] sm:text-[22px] font-bold tracking-tight text-neutral-900 leading-tight">
+                          {category.name}
+                        </h2>
+                        <span className="text-[11px] sm:text-xs font-sans text-neutral-400 shrink-0 tabular-nums">
                           {items.length} menu
                         </span>
                       </div>
@@ -180,7 +168,7 @@ export default function MenuPage() {
                           <div
                             key={item.id}
                             id={`menu-item-${item.id}`}
-                            className="py-2.5 md:py-2 md:border-b md:border-[#EAE6DE] flex flex-col justify-start"
+                            className="py-2 md:py-1.5 md:border-b md:border-[#EAE6DE] flex flex-col justify-start"
                           >
                             {/* Line 1: Name (Left) & Price (Right) with guaranteed gap and no wrap on price */}
                             <div className="flex items-baseline justify-between gap-3 sm:gap-4">
@@ -225,7 +213,7 @@ export default function MenuPage() {
         >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
             <p className="text-sm text-neutral-200 font-sans">
-              Ingin memesan meja untuk acara atau santap bersama di CU@CAFE?
+              Ingin memesan meja untuk acara atau makan bersama di CU@CAFE?
             </p>
             <div>
               <button

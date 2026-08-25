@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div className="p-5 bg-white border border-[#E5E0D8] space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs uppercase font-sans font-bold text-neutral-500">
-                      Status Hari Ini
+                      Status Operasional
                     </span>
                     <span
                       className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-sans font-semibold ${
@@ -96,7 +96,7 @@ export default function ContactPage() {
                           status.isOpen ? 'bg-emerald-600 animate-pulse' : 'bg-neutral-500'
                         }`}
                       />
-                      <span>{status.isOpen ? 'Buka Sekarang' : 'Tutup'}</span>
+                      <span>{status.isOpen ? 'Buka' : 'Tutup'}</span>
                     </span>
                   </div>
                   <p className="font-sans font-bold text-lg text-black">
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 <div className="p-5 bg-white border border-[#E5E0D8] space-y-3">
                   <h3 className="font-sans font-bold text-base text-black flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-neutral-500" />
-                    <span>Alamat & Petunjuk Lokasi</span>
+                    <span>Alamat & Lokasi</span>
                   </h3>
                   <div className="text-xs text-neutral-700 space-y-1 font-sans">
                     <p className="font-bold text-black">{BUSINESS_INFO.address.street}</p>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                       className="bg-black text-white px-3.5 py-2 text-xs uppercase font-semibold tracking-wider hover:bg-neutral-800 transition-colors inline-flex items-center gap-1.5"
                     >
                       <Navigation className="w-3.5 h-3.5" />
-                      <span>Petunjuk Google Maps</span>
+                      <span>Buka Google Maps</span>
                     </motion.a>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                       Kirim Pesan WhatsApp
                     </h3>
                     <p className="text-xs text-neutral-300 font-sans mt-0.5">
-                      Chat langsung dengan staf layanan kami.
+                      Chat langsung dengan tim kami.
                     </p>
                   </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
-                        placeholder="Nama lengkap..."
+                        placeholder="Nama lengkap"
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
                         className="w-full bg-[#292A28] border border-neutral-700 px-3 py-2.5 sm:py-2 text-white placeholder:text-neutral-500 focus:outline-none focus:border-neutral-400 transition-colors text-sm sm:text-xs"
@@ -217,7 +217,7 @@ export default function ContactPage() {
                       <textarea
                         rows={3}
                         required
-                        placeholder="Tuliskan pertanyaan atau rencana kunjungan Anda..."
+                        placeholder="Tuliskan pertanyaan atau rencana kunjungan"
                         value={formMessage}
                         onChange={(e) => setFormMessage(e.target.value)}
                         className="w-full bg-[#292A28] border border-neutral-700 px-3 py-2 text-white placeholder:text-neutral-500 focus:outline-none focus:border-neutral-400 resize-none transition-colors text-sm sm:text-xs"
@@ -315,17 +315,14 @@ export default function ContactPage() {
                   type="button"
                   onClick={() => setIsMapInteractive(true)}
                   className="absolute inset-0 w-full h-full bg-black/10 hover:bg-black/20 backdrop-blur-[1px] transition-all flex flex-col items-center justify-center cursor-pointer p-4 text-center group focus:outline-none"
-                  aria-label="Aktifkan interaksi dan zoom peta Google Maps"
+                  aria-label="Aktifkan peta Google Maps"
                 >
                   <div className="bg-white/95 text-neutral-900 shadow-md border border-neutral-300 px-4 py-2.5 flex items-center gap-2 transition-transform group-hover:scale-105">
                     <ZoomIn className="w-4 h-4 text-black" />
                     <span className="text-xs font-semibold uppercase tracking-wider">
-                      Klik untuk Zoom & Geser Peta
+                      Aktifkan Peta
                     </span>
                   </div>
-                  <span className="text-[11px] text-neutral-700 bg-white/90 px-2.5 py-0.5 mt-2 border border-neutral-300 shadow-xs font-sans">
-                    Mencegah halaman tersendat saat menggulir
-                  </span>
                 </button>
               )}
 
