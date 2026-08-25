@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-display), "Fraunces", "DM Serif Display", Georgia, serif;
+  --font-sans: var(--font-sans), "DM Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-charcoal: #1D1D1B;
+  --color-deep-charcoal: #292A28;
+  --color-warm-white: #F7F5F0;
+  --color-pure-white: #FFFFFF;
+  --color-ink-black: #11110F;
+  --color-warm-border: #E5E0D8;
+  --color-charcoal-border: #383834;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: #11110F;
+  background-color: #F7F5F0;
+  font-family: var(--font-sans), sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #F7F5F0;
+  color: #11110F;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #1D1D1B;
+  color: #F7F5F0;
+}
+
+/* Hide scrollbars globally while preserving scroll functionality */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Utility for explicitly styled elements */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
