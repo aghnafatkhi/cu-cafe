@@ -11,14 +11,27 @@ import { BUSINESS_INFO, getCurrentOpenStatus } from '@/data/business';
 
 export default function ContactPage() {
   const [isResModalOpen, setIsResModalOpen] = useState(false);
-  const [status, setStatus] = useState(getCurrentOpenStatus());
+  const [status, setStatus] = useState({
+    isOpen: true,
+    statusText: 'Buka · 08:00 – 22:00 WIB',
+    closingSoon: false,
+  });
+  const [currentDayIndex, setCurrentDayIndex] = useState<number | null>(null);
   const [formName, setFormName] = useState('');
   const [formSubject, setFormSubject] = useState('Pertanyaan Umum / Info Menu');
   const [formMessage, setFormMessage] = useState('');
   const [isMapInteractive, setIsMapInteractive] = useState(false);
 
   useEffect(() => {
-    const update = () => setStatus(getCurrentOpenStatus());
+    const update = () => {
+      const live = getCurrentOpenStatus();
+      setStatus({
+        isOpen: live.isOpen,
+        statusText: live.statusText,
+        closingSoon: live.closingSoon,
+      });
+      setCurrentDayIndex(live.currentDaySchedule.dayIndex);
+    };
     update();
     const timer = setInterval(update, 60000);
     return () => clearInterval(timer);
@@ -112,7 +125,7 @@ export default function ContactPage() {
                   </h3>
                   <div className="divide-y divide-[#E5E0D8] text-xs font-sans">
                     {BUSINESS_INFO.operatingSchedule.map((item) => {
-                      const isToday = item.dayIndex === new Date().getDay();
+                      const isToday = currentDayIndex !== null && item.dayIndex === currentDayIndex;
                       return (
                         <div
                           key={item.dayName}

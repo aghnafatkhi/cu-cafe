@@ -23,12 +23,11 @@ import WhatsAppWishlistFloat from '@/components/WhatsAppWishlistFloat';
 import DishCard from '@/components/DishCard';
 import SectionTransition from '@/components/SectionTransition';
 import { ALL_MENU_ITEMS, MenuItem } from '@/data/menu';
-import { BUSINESS_INFO, getWhatsAppLink, getCurrentOpenStatus } from '@/data/business';
+import { BUSINESS_INFO, getWhatsAppLink } from '@/data/business';
 
 export default function HomePage() {
   const [isResModalOpen, setIsResModalOpen] = useState(false);
   const [wishlist, setWishlist] = useState<MenuItem[]>([]);
-  const status = getCurrentOpenStatus();
 
   const handleToggleWishlist = (item: MenuItem) => {
     setWishlist((prev) =>
